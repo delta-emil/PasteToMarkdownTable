@@ -1,4 +1,7 @@
-﻿namespace PasteToMarkdownTable
+﻿using System.Drawing;
+using System.Windows.Forms;
+
+namespace PasteToMarkdownTable
 {
     partial class FormMain
     {

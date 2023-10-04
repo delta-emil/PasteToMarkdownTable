@@ -1,4 +1,7 @@
+using System;
+using System.Linq;
 using System.Text;
+using System.Windows.Forms;
 
 namespace PasteToMarkdownTable
 {
@@ -31,8 +34,8 @@ namespace PasteToMarkdownTable
 
         private static string TabSeparatedToMarkdownTable(string input)
         {
-            var lines = input.Split(Environment.NewLine);
-            int lineCount = lines.Length + (lines[^1].Length == 0 ? -1 : 0);
+            var lines = input.Split(new[] { Environment.NewLine }, StringSplitOptions.None);
+            int lineCount = lines.Length + (lines[lines.Length - 1].Length == 0 ? -1 : 0);
             if (lineCount <= 0)
             {
                 return string.Empty;
